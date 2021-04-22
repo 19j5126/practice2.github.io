@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>kaigan</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="douga" src="douga.mp4" preload="auto" autoplay></video>
+      </a-assets>
+      <a-videosphere src="#douga" rotation="0 -65 0"></a-videosphere>
+      <a-box id="play" position="0 1.6 -1.5" scale="1 1 1" material="opacity: 0; color: #ffffff"></a-box>
+      <a-box id="stop" position="0.5 0 -1" scale="0.2 0.2 0.2" color="red"></a-box>
+      <a-camera>
+        <a-cursor fuse="true" fuse-timeout="1000"></a-cursor>
+      </a-camera>
+      <a-entity camera look-controls position="0 1.7 0">
+        <a-text id = "text" value="Play" position = "0 0 -1" scale = "0.5 0.5 0.5" align = "center" color="#1E90FF" ></a-text>
+      </a-entity>
+      <a-entity laser-controls></a-entity>
+    </a-scene>
+    <script>
+      const video = document.getElementById("douga");
+      const btnPlay = document.getElementById("play");
+
+      function moji(){
+        document.getElementById("text").setAttribute("value","next scene");
+        setTimeout(tugi, 2000);
+      }
+      function tugi(){
+        window.location.href = "https://18j5141.github.io/meiseisound5/"
+      }
+
+      btnPlay.addEventListener("mouseenter", (e) =>{
+        video.play();
+      })
+      const btnStop = document.getElementById("stop");
+      btnStop.addEventListener("mouseenter", (e) =>{
+        video.pause();
+        document.getElementById("text").setAttribute("value","Stop");
+        setTimeout(moji, 5000);
+      })
+    </script>
+  </body>
+</html>
