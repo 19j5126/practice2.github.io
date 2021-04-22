@@ -8,7 +8,7 @@
   <body>
     <a-scene>
       <a-assets>
-        <video id="douga" src="douga.mp4" preload="auto" autoplay></video>
+        <video id="douga" src="3.mp4" preload="auto" autoplay></video>
       </a-assets>
       <a-videosphere src="#douga" rotation="0 -65 0"></a-videosphere>
       <a-box id="play" position="0 1.6 -1.5" scale="1 1 1" material="opacity: 0; color: #ffffff"></a-box>
@@ -25,13 +25,6 @@
       const video = document.getElementById("douga");
       const btnPlay = document.getElementById("play");
 
-      function moji(){
-        document.getElementById("text").setAttribute("value","next scene");
-        setTimeout(tugi, 2000);
-      }
-      function tugi(){
-        window.location.href = "https://18j5141.github.io/meiseisound5/"
-      }
 
       btnPlay.addEventListener("mouseenter", (e) =>{
         video.play();
@@ -39,7 +32,6 @@
       const btnStop = document.getElementById("stop");
       btnStop.addEventListener("mouseenter", (e) =>{
         video.pause();
-        document.getElementById("text").setAttribute("value","Stop");
         setTimeout(moji, 5000);
       })
     </script>
